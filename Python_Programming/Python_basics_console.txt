@@ -1,0 +1,444 @@
+jakes@jakes-Aspire-A315-51:~$ python3
+Python 3.6.9 (default, Apr 18 2020, 01:56:04) 
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> numbers = [a**2 for a in numbers]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'numbers' is not defined
+>>> numbers = [1,2,3,4,5,6,7]
+>>> numbers = [a**2 for a in numbers]
+>>> numbers
+[1, 4, 9, 16, 25, 36, 49]
+>>> import this 
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+>>> person = ('Jake', 'Stone', 20)
+>>> person
+('Jake', 'Stone', 20)
+>>> type(person)
+<class 'tuple'>
+>>> person = 'Jake', 'Stone', 20
+>>> 
+>>> person
+('Jake', 'Stone', 20)
+>>> type(person)
+<class 'tuple'>
+>>> 
+>>> cars = ['ford','toyota','ferrae']
+>>> cars
+['ford', 'toyota', 'ferrae']
+>>> dev = {"name": "Jake", "surname":"Stone", "age": 10}
+>>> dev
+{'name': 'Jake', 'surname': 'Stone', 'age': 10}
+>>> dataTuple = "val1", "val2","val3" 
+>>> dataTuple[0]
+'val1'
+>>> dataTuple[0] = "valone"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> birthday = ('August',30,1999)
+>>> month, day, year = birthday
+>>> month
+'August'
+>>> day
+30
+>>> year
+1999
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> birthday
+('August', 30, 1999)
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> people = [
+...     ('Joe', 'schmoe', 'Barbok', 'CA')
+...     ('Mary', 'Rottburger', 'Modison', 'RI'),
+...     ('Jose', 'Romerez', 'Ames', 'IA')
+... ]
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+TypeError: 'tuple' object is not callable
+>>> people = [
+...     ('Joe', 'schmoe', 'Barbok', 'CA'),
+...     ('Mary', 'Rottburger', 'Modison', 'RI'),
+...     ('Jose', 'Romerez', 'Ames', 'IA')
+... ]
+>>> people[0]
+('Joe', 'schmoe', 'Barbok', 'CA')
+>>> def person_record(first_name, last_name, cite, state):
+...     print("{} {} lives in {}, {}).format(first_name, last_name, city, state))
+  File "<stdin>", line 2
+    print("{} {} lives in {}, {}).format(first_name, last_name, city, state))
+                                                                            ^
+SyntaxError: EOL while scanning string literal
+>>> def person_record(first_name, last_name, cite, state):
+...     print("{} {} lives in {}, {}".format(first_name, last_name, city, state))
+... 
+>>> for person in people: 
+...     person_record(*person)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "<stdin>", line 2, in person_record
+NameError: name 'city' is not defined
+>>> def person_record(first_name, last_name, cite, state):
+... def person_record(first_name, last_name, cite, state):
+  File "<stdin>", line 2
+    def person_record(first_name, last_name, cite, state):
+      ^
+IndentationError: expected an indented block
+>>> def person_record(first_name, last_name, city, state):
+...     print("{} {} lives in {}, {}".format(first_name, last_name, city, state))
+... 
+>>> for person in people: 
+...     person_record(*person)
+... 
+Joe schmoe lives in Barbok, CA
+Mary Rottburger lives in Modison, RI
+Jose Romerez lives in Ames, IA
+>>> 
+
+
+
+
+
+
+
+
+>>> Fruits = ['apple', 'Mango', 'banana', 'orange', 'cherry','kiwi']
+>>> sorted_fruit = sorted(Fruits)
+>>> sorted_fruit
+['Mango', 'apple', 'banana', 'cherry', 'kiwi', 'orange']
+>>> def ignore_case(item):
+...     return item.lower()
+... 
+>>> sorted_fruit(Fruits, ignore_case)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'list' object is not callable
+>>> sorted_fruit = (Fruits, ignore_case)
+>>> sorted_fruit
+(['apple', 'Mango', 'banana', 'orange', 'cherry', 'kiwi'], <function ignore_case at 0x7f6fd70f6950>)
+>>> sorted_fruit = sorted(Fruits, ignore_case)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must use keyword argument for key function
+>>> sorted_fruit = sorted(Fruits, ignore_case)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must use keyword argument for key function
+>>> Fruits = ['apple', 'Mango', 'banana', 'orange', 'cherry','kiwi']
+>>> sorted_fruit = sorted(Fruits, ignore_case)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must use keyword argument for key function
+>>> def ignore_case(item):
+...     return item.lower()
+... 
+>>> sorted_fruit = sorted(Fruits, key=ignore_case)
+>>> sorted_fruit
+['apple', 'banana', 'cherry', 'kiwi', 'Mango', 'orange']
+>>> def by_length_then_name(item):
+...     return (len(item), item.lower())
+... 
+>>> Fruits = ['apple', 'Mango', 'banana', 'orange', 'cherry','kiwi']
+>>> sorted_fruit = sorted(Fruits, key=by_length_then_name)
+>>> sorted
+<built-in function sorted>
+>>> sorted_fruit = sorted(Fruits, key=by_length_then_name())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: by_length_then_name() missing 1 required positional argument: 'item'
+>>> sorted_fruit = sorted(Fruits, key=by_length_then_name)
+>>> sorted
+<built-in function sorted>
+>>> sorted_fruit = sorted(Fruits, key=by_length_then_name)
+>>> sorted_fruit
+['kiwi', 'apple', 'Mango', 'banana', 'cherry', 'orange']
+>>> nums = [800, 80, 1000, 32, 255, 400, 5, 5000]
+>>> n1 = sorted(nums)
+>>> n1
+[5, 32, 80, 255, 400, 800, 1000, 5000]
+>>> n2 = sorted(nums, key=str)
+>>> n2
+[1000, 255, 32, 400, 5, 5000, 80, 800]
+>>> # ^sorts based on string value of the numbers
+... 
+>>> 
+>>> import re 
+>>> rebooks = ["A Study in Scarlet", "The Sign of the Four", "The hound of the Baskervilles", "The Valley of fear", "The Adventures of Sherlock Holmes", "The Memours of Sherlock Holmes", "The Return of Sherlock Holmes", "His last Bow", "The Case-Book of Sherlock Holmes"]
+>>> rebooks
+['A Study in Scarlet', 'The Sign of the Four', 'The hound of the Baskervilles', 'The Valley of fear', 'The Adventures of Sherlock Holmes', 'The Memours of Sherlock Holmes', 'The Return of Sherlock Holmes', 'His last Bow', 'The Case-Book of Sherlock Holmes']
+>>> rx_article = re.complie(r'^(the|a|an)\s+', re.I)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 're' has no attribute 'complie'
+>>> 
+>>> rx_article = re.compile(r'^(the|a|an)\s+', re.I)
+>>> 
+>>> def strip_article(title):
+...     stripped_title = rx_article.sub('', title.lower())
+...     return stripped_title
+... 
+>>> for book in sorted(rebooks, key=strip_article):
+...     print(book)
+... 
+The Adventures of Sherlock Holmes
+The Case-Book of Sherlock Holmes
+His last Bow
+The hound of the Baskervilles
+The Memours of Sherlock Holmes
+The Return of Sherlock Holmes
+The Sign of the Four
+A Study in Scarlet
+The Valley of fear
+>>> # lambdas are often called call backs 
+... 
+>>> addFive  = lambda x : x + 5 
+>>> addFive(2)
+7
+>>> addTwoNumbers = lambda x,y : x + y
+>>> addTwoNumbers(5, 9)
+14
+>>> printResult = lambda func,val : print(func(val)) 
+>>> printResult(addFive, 15)
+20
+>>> Fruits
+['apple', 'Mango', 'banana', 'orange', 'cherry', 'kiwi']
+>>> sorted_fruots = sorted(Fruits, key = lambda x : x.lower())
+>>> sorted_fru
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sorted_fru' is not defined
+>>> sorted_fruots
+['apple', 'banana', 'cherry', 'kiwi', 'Mango', 'orange']
+>>> numbers = [1,2,3,4,5,6,7,8,9,10]
+>>> squared = [x**2 for x in numbers]
+>>> squared
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+>>> evens = [x * 2 for x in range(20)]
+>>> ev
+eval(  evens  
+>>> ev
+eval(  evens  
+>>> evens
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38]
+>>> ufruits  = [Fruits.upper() for fruit in Fruits]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+AttributeError: 'list' object has no attribute 'upper'
+>>> ufruits  = [fruit.upper() for fruit in Fruits]
+>>> ufruits
+['APPLE', 'MANGO', 'BANANA', 'ORANGE', 'CHERRY', 'KIWI']
+>>> calues = [2, 42, 18, 92, "boom", ['a', 'b', 'c']]
+>>> calues
+[2, 42, 18, 92, 'boom', ['a', 'b', 'c']]
+>>> doubles = [v * 2 for v in values]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'values' is not defined
+>>> doubles = [v * 2 for v in calues]
+>>> doubles
+[4, 84, 36, 184, 'boomboom', ['a', 'b', 'c', 'a', 'b', 'c']]
+>>> animals = ['O]
+  File "<stdin>", line 1
+    animals = ['O]
+                 ^
+SyntaxError: EOL while scanning string literal
+>>> animals = ['OWL', 'Badger', 'bushbaby', 'Tiger', 'Wombat', 'GORILLA', 'AADVARK']
+>>> comprehension = {a.lower(): len(a) for a in amimals}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'amimals' is not defined
+>>> comprehension = {a.lower(): len(a) for a in amimals}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'amimals' is not defined
+>>> comprehension = {a.lower(): len(a) for a in animals}
+>>> comprehension
+{'owl': 3, 'badger': 6, 'bushbaby': 8, 'tiger': 5, 'wombat': 6, 'gorilla': 7, 'aadvark': 7}
+>>> 
+jakes@jakes-Aspire-A315-51:~$ cat > mary_had_a_little_lamb
+Mary had a little lamb, Its fleece was white as snow, And every where that Mary went The lamb was sure to go ; He followed her to school one day— That was against the rule, It made the children laugh and play, To see a lamb at school. And so the Teacher turned him out, But still he lingered near, And waited patiently about, Till Mary did appear ; And then he ran to her, and laid His head upon her arm, As if he said—‘ I’m not afraid— You’ll keep me from all harm.’ ‘ What makes the lamb love Mary so ?’ The eager children cry— ‘ O, Mary loves the lamb, you know,’ The Teacher did reply ;— ‘ And you each gentle animal In confidence may bind, And make them follow at your call, If you are always kind.’
+
+
+
+
+^C
+jakes@jakes-Aspire-A315-51:~$ nano mary_had_a_little_lamb 
+jakes@jakes-Aspire-A315-51:~$ python3
+Python 3.6.9 (default, Apr 18 2020, 01:56:04) 
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import re 
+>>> 
+>>> 
+jakes@jakes-Aspire-A315-51:~$ mv mary_had_a_little_lamb mary_had_a_little_lamb.txt
+jakes@jakes-Aspire-A315-51:~$ python3 
+Python 3.6.9 (default, Apr 18 2020, 01:56:04) 
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import re
+>>> with open("./mary_had_a_little_lamb.txt") as mary_in:
+... 
+
